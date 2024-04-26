@@ -1,13 +1,20 @@
 def longest_substring(s: str) -> int:
-    
-    """"
-    
-    Implement the function longest_substring 
-    using the provided longest_substring function to find 
-    the length of the longest substring without repeating characters.
+    n = len(str)
+    result = 0
+    for i in range(n):
+        visited = [0] * 256
 
-    """ 
-    pass
+        for j in range(i, n):
+
+        
+            if (visited[ord(str[j])] == True):
+                break      
+            else:
+                result = max(result, j - i + 1)
+                visited[ord(str[j])] = True
+
+        visited[ord(str[i])] = False
+    return result
 
 
 
